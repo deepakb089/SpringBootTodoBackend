@@ -21,14 +21,14 @@ public class EditTodoRequest {
      * Todo's title
      */
     @NotNull
-    @Size(max = 100)
+    @Size(max = 100, min = 5)
     private String title;
 
     /**
      * Description
      */
     @NotNull
-    @Size(max = 1000)
+    @Size(max = 1000, min = 5)
     private String desc;
 
 

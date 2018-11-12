@@ -12,6 +12,7 @@ import com.kodewire.todoapp.responses.SuccessResponse;
 import com.kodewire.todoapp.services.TodoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -149,6 +150,16 @@ public class TodoController {
                     .build();
         }
     }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    ApiResponse methodArgumentsNotValid(MethodArgumentNotValidException exp) {
+        return ErrorReponse.builder().status("error")
+                .message("Illegal aruments")
+                .build();
+
+    }
+
+
 
 
 }

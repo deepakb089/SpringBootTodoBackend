@@ -19,14 +19,14 @@ public class AddTodoRequest {
      * Title
      */
     @NotNull
-    @Size(max = 100)
+    @Size(max = 100, min = 5)
     private String title;
 
     /**
      * Descrption
      */
     @NotNull
-    @Size(max = 1000)
+    @Size(max = 1000, min = 5)
     private String description;
 
     /**
